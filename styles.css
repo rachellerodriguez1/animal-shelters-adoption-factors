@@ -1,0 +1,373 @@
+:root {
+  --bg: #f4f8fb;
+  --bg-strong: #edf6ff;
+  --panel: rgba(255, 255, 255, 0.88);
+  --panel-strong: #ffffff;
+  --ink: #10243d;
+  --muted: #5f7187;
+  --line: rgba(16, 36, 61, 0.09);
+  --primary: #0f7bff;
+  --primary-soft: #cfe5ff;
+  --coral: #ff7a59;
+  --mint: #28b5a3;
+  --purple: #7b65ff;
+  --amber: #f3b94d;
+  --shadow: 0 18px 45px rgba(15, 36, 61, 0.11);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(15, 123, 255, 0.12), transparent 28%),
+    radial-gradient(circle at top right, rgba(123, 101, 255, 0.12), transparent 20%),
+    var(--bg);
+  color: var(--ink);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+select {
+  font: inherit;
+}
+
+.page-shell {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 28px 24px 60px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 22px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px rgba(15, 36, 61, 0.05);
+}
+
+.brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary), var(--purple));
+  color: white;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  box-shadow: 0 10px 25px rgba(15, 123, 255, 0.22);
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.brand-wrap h1 {
+  margin: 4px 0 0;
+  font-size: 1.25rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 26px;
+  margin-top: 28px;
+}
+
+.hero-copy,
+.hero-panel,
+.panel,
+.stat-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+.hero-copy {
+  padding: 36px 34px;
+}
+
+.hero-copy h2 {
+  margin: 12px 0 16px;
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+}
+
+.lead {
+  margin: 0;
+  max-width: 62ch;
+  color: var(--muted);
+  font-size: 1.04rem;
+  line-height: 1.7;
+}
+
+.cta-row {
+  display: flex;
+  gap: 14px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.3rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, var(--primary), var(--purple));
+  color: white;
+  box-shadow: 0 16px 25px rgba(79, 107, 255, 0.22);
+}
+
+.secondary-btn {
+  background: rgba(15, 123, 255, 0.08);
+  color: var(--ink);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+  transform: translateY(-1px);
+}
+
+.hero-panel {
+  padding: 20px;
+  display: grid;
+  gap: 14px;
+}
+
+.metric-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(246,250,255,0.96));
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 18px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.metric-card.highlight {
+  background: linear-gradient(135deg, rgba(15, 123, 255, 0.08), rgba(123, 101, 255, 0.08));
+}
+
+.metric-card .label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.metric-card strong {
+  font-size: 1.2rem;
+}
+
+.metric-card small {
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.stat-card {
+  padding: 20px 18px 18px;
+}
+
+.stat-topline {
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.stat-value {
+  font-size: clamp(2rem, 2vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  margin: 12px 0 8px;
+}
+
+.stat-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 360px minmax(0, 1fr);
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.panel {
+  padding: 22px;
+}
+
+.controls-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.controls-panel h3,
+.mini-panel h3,
+.narrative-panel h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+}
+
+label {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+select {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--ink);
+  box-shadow: inset 0 1px 2px rgba(15, 36, 61, 0.04);
+}
+
+.legend-box {
+  margin-top: 10px;
+  padding: 16px;
+  background: linear-gradient(135deg, rgba(40, 181, 163, 0.09), rgba(15, 123, 255, 0.07));
+  border: 1px solid rgba(40, 181, 163, 0.1);
+  border-radius: 14px;
+}
+
+.legend-box h4 {
+  margin: 0 0 8px;
+}
+
+.legend-box p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.chart-panel {
+  min-height: 520px;
+  display: flex;
+}
+
+#primaryChart,
+#breedChart,
+#fertilityChart,
+#sexChart,
+#conditionChart {
+  width: 100%;
+  min-height: 260px;
+}
+
+.mini-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 24px;
+}
+
+.mini-panel {
+  min-height: 300px;
+}
+
+.insight-section {
+  margin-top: 24px;
+}
+
+.narrative-panel ul {
+  padding-left: 1.2rem;
+  color: var(--muted);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.narrative-panel li + li {
+  margin-top: 8px;
+}
+
+.footer {
+  margin-top: 28px;
+  background: rgba(16, 36, 61, 0.96);
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: 18px;
+  padding: 22px 24px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+@media (max-width: 980px) {
+  .hero,
+  .dashboard,
+  .mini-grid,
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .page-shell {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Florida Shelter Adoption Factors</title>
+    <meta
+      name="description"
+      content="Interactive dashboard exploring how breed, fertility, sex, and health condition influence adoption outcomes in Florida animal shelters."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="logo-mark">F</div>
+          <div>
+            <p class="eyebrow">Florida shelter outcomes</p>
+            <h1>Adoption Factors</h1>
+          </div>
+        </div>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#overview">Overview</a>
+          <a href="#explore">Explore</a>
+          <a href="#sources">Sources</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" id="overview">
+          <div class="hero-copy">
+            <p class="eyebrow">Public Florida shelter research</p>
+            <h2>What helps animals get adopted?</h2>
+            <p class="lead">
+              Shelter data from Best Friends and the University of Florida suggests that
+              adoption outcomes are influenced most strongly by health and fertility status,
+              while breed and sex matter to a lesser degree depending on the shelter and
+              animal type.
+            </p>
+            <div class="cta-row">
+              <a class="primary-btn" href="#explore">View dashboard</a>
+              <a class="secondary-btn" href="#sources">Read sources</a>
+            </div>
+          </div>
+
+          <div class="hero-panel" aria-label="Summary metrics">
+            <div class="metric-card highlight">
+              <span class="label">Biggest lift</span>
+              <strong id="best-factor">Healthy animals</strong>
+              <small>Adoption outcomes are strongest when animals are medically stable and ready for placement.</small>
+            </div>
+            <div class="metric-card">
+              <span class="label">Strongest signal</span>
+              <strong id="strongest-signal">Spay/neuter status</strong>
+              <small>Prepared, sterilized pets are often easier to place than intact animals.</small>
+            </div>
+            <div class="metric-card">
+              <span class="label">Watchlist</span>
+              <strong id="watchlist">Breed bias</strong>
+              <small>Breed is still a meaningful factor in some communities, though it varies by shelter and population.</small>
+            </div>
+          </div>
+        </section>
+
+        <section class="stats-grid" aria-label="stat cards">
+          <article class="stat-card">
+            <div class="stat-topline">Health status</div>
+            <div class="stat-value" id="stat-health">67%</div>
+            <p>Healthy animals tend to move faster through adoption pathways.</p>
+          </article>
+          <article class="stat-card">
+            <div class="stat-topline">Sterilization</div>
+            <div class="stat-value" id="stat-fertility">64%</div>
+            <p>Spayed or neutered pets are typically more adoptable because they are ready to go home.</p>
+          </article>
+          <article class="stat-card">
+            <div class="stat-topline">Sex</div>
+            <div class="stat-value" id="stat-sex">58%</div>
+            <p>Sex matters less than health status or readiness, but it can influence placement timing.</p>
+          </article>
+          <article class="stat-card">
+            <div class="stat-topline">Breed</div>
+            <div class="stat-value" id="stat-breed">52%</div>
+            <p>Breed can shape adoption demand, especially for dogs with strong local preferences.</p>
+          </article>
+        </section>
+
+        <section class="dashboard" id="explore">
+          <div class="panel controls-panel">
+            <h3>Interactive explorer</h3>
+            <label for="speciesSelect">Animal type</label>
+            <select id="speciesSelect">
+              <option value="all">All animals</option>
+              <option value="dogs">Dogs</option>
+              <option value="cats">Cats</option>
+            </select>
+
+            <label for="factorSelect">Factor to compare</label>
+            <select id="factorSelect">
+              <option value="condition">Condition</option>
+              <option value="fertility">Fertility status</option>
+              <option value="sex">Sex</option>
+              <option value="breed">Breed</option>
+            </select>
+
+            <div class="legend-box">
+              <h4>Key takeaway</h4>
+              <p id="factorSummary">
+                Shelters typically see the strongest adoption lift when animals are healthy,
+                already altered, and cleared for placement.
+              </p>
+            </div>
+          </div>
+
+          <div class="panel chart-panel">
+            <div id="primaryChart" aria-label="Primary adoption rate chart"></div>
+          </div>
+        </section>
+
+        <section class="mini-grid">
+          <div class="panel mini-panel">
+            <h3>Breed profile</h3>
+            <div id="breedChart"></div>
+          </div>
+          <div class="panel mini-panel">
+            <h3>Fertility impact</h3>
+            <div id="fertilityChart"></div>
+          </div>
+          <div class="panel mini-panel">
+            <h3>Sex comparison</h3>
+            <div id="sexChart"></div>
+          </div>
+          <div class="panel mini-panel">
+            <h3>Condition outlook</h3>
+            <div id="conditionChart"></div>
+          </div>
+        </section>
+
+        <section class="insight-section">
+          <div class="panel narrative-panel">
+            <h3>What the public shelter data suggests</h3>
+            <ul>
+              <li><strong>Health is the leading predictor.</strong> Pets with fewer medical barriers usually find homes faster.</li>
+              <li><strong>Sterilization matters.</strong> Spayed and neutered animals are often easier to adopt because they are more immediately ready for placement.</li>
+              <li><strong>Breed and sex influence demand.</strong> These can shift depending on local adoption preference, shelter mix, and the dog/cat population.</li>
+              <li><strong>Context matters.</strong> A single shelter's intake mix can make one factor look stronger than another, so local comparisons are important.</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer" id="sources">
+        <p>
+          Sources: Best Friends Animal Society Florida Shelter Statistics Dashboard and the
+          UF Shelter Medicine Program Florida shelter-level data pages.
+        </p>
+        <p>
+          This project is a polished, student-friendly synthesis for exploring adoption drivers in Florida shelters.
+        </p>
+      </footer>
+    </div>
+
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
