@@ -27,8 +27,8 @@ body {
   margin: 0;
   font-family: "Inter", sans-serif;
   background:
-    linear-gradient(rgba(244, 248, 251, 0.8), rgba(244, 248, 251, 0.82)),
-    url("https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat fixed;
+    linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.78)),
+    url("https://img.magnific.com/free-vector/frame-with-dogs-vector-white-background_53876-127700.jpg?semt=ais_hybrid&w=740&q=80") center/cover no-repeat fixed;
   color: var(--ink);
 }
 
