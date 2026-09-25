@@ -28,7 +28,10 @@
         </div>
         <nav class="nav-links" aria-label="Main navigation">
           <a href="#overview">Overview</a>
+          <a href="#why">Why</a>
+          <a href="#cute-dogs">Cute dogs</a>
           <a href="#explore">Explore</a>
+          <a href="https://www.hssc.org/" target="_blank" rel="noreferrer">Adopt</a>
           <a href="#sources">Sources</a>
         </nav>
       </header>
@@ -46,6 +49,7 @@
             </p>
             <div class="cta-row">
               <a class="primary-btn" href="#explore">View dashboard</a>
+              <a class="secondary-btn" href="https://www.hssc.org/" target="_blank" rel="noreferrer">Adopt now</a>
               <a class="secondary-btn" href="#sources">Read sources</a>
             </div>
           </div>
@@ -67,6 +71,137 @@
               <small>Breed is still a meaningful factor in some communities, though it varies by shelter and population.</small>
             </div>
           </div>
+        </section>
+
+        <section class="why-section" id="why">
+          <div class="section-header">
+            <p class="eyebrow">Why</p>
+            <h3>Why I’m interested in this project</h3>
+          </div>
+
+          <div class="why-grid">
+            <div class="why-photo-panel">
+              <img
+                src="17F9A946-2564-462E-B0C4-1D0A967EEE27_1_105_c.jpeg"
+                alt="A smiling person with a dalmatian dog"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="why-copy panel">
+              <p>
+                I am deeply invested in this project because animal welfare and adoption outcomes are not just data points to me—they are real lives, real recovery stories, and real opportunities to help pets find safe, loving homes.
+              </p>
+              <p>
+                I have 4 years of veterinary program experience, and I am a certified veterinary technician with more than 500 hours of community service. My work has been rooted in compassionate animal care, rescue support, and helping vulnerable pets heal and thrive.
+              </p>
+
+              <ul class="reason-list">
+                <li>I have worked with 3 different animal rescues and fostered both dogs and cats.</li>
+                <li>I have nursed animals back to health, supported recovery, and helped with training and socialization.</li>
+                <li>I have volunteered in community service settings where I helped animals and people alike through education, support, and care.</li>
+              </ul>
+
+              <div class="organization-list">
+                <h4>Collaborations and rescues</h4>
+                <ul>
+                  <li><a href="https://thisisthedog.org/" target="_blank" rel="noreferrer">This is the Dog</a></li>
+                  <li><a href="https://www.miamianimalrescue.org/" target="_blank" rel="noreferrer">Miami Animal Rescue</a></li>
+                  <li><a href="https://www.facebook.com/KikisPlaceofCareandKindness/" target="_blank" rel="noreferrer">Kiki's Place of Care and Kindness</a></li>
+                </ul>
+              </div>
+
+              <div class="clinic-list">
+                <h4>Clinical experience</h4>
+                <p>Miami Welfare Animal Clinic</p>
+                <p>Animal Medical Center and Spa</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="cute-dogs-section" id="cute-dogs">
+          <div class="section-header">
+            <p class="eyebrow">Cute dogs</p>
+            <h3>Golden retriever favorites</h3>
+          </div>
+        </section>
+
+        <section class="pet-gallery" aria-label="Dog and cat adoption gallery">
+          <article class="pet-card">
+            <img
+              src="IMG_7923.jpeg"
+              alt="Dog with a person in a shelter setting"
+              loading="lazy"
+            />
+            <div class="pet-meta">
+              <div>
+                <p class="eyebrow">Dogs</p>
+                <h3>Ready for a walk</h3>
+              </div>
+              <span class="chip">Adoptable</span>
+            </div>
+          </article>
+
+          <article class="pet-card">
+            <img
+              src="IMG_4111.jpeg"
+              alt="Dog and volunteer during care"
+              loading="lazy"
+            />
+            <div class="pet-meta">
+              <div>
+                <p class="eyebrow">Golden</p>
+                <h3>Happy tail wags</h3>
+              </div>
+              <span class="chip">Playful</span>
+            </div>
+          </article>
+
+          <article class="pet-card">
+            <img
+              src="IMG_1904.jpeg"
+              alt="Golden retriever lying on the floor looking relaxed"
+              loading="lazy"
+            />
+            <div class="pet-meta">
+              <div>
+                <p class="eyebrow">Retriever</p>
+                <h3>Sweet and cuddly</h3>
+              </div>
+              <span class="chip">Friendly</span>
+            </div>
+          </article>
+
+          <article class="pet-card">
+            <img
+              src="IMG_3644.jpeg"
+              alt="Cat in a foster setting"
+              loading="lazy"
+            />
+            <div class="pet-meta">
+              <div>
+                <p class="eyebrow">Cats</p>
+                <h3>Looking for a cozy home</h3>
+              </div>
+              <span class="chip">Friendly</span>
+            </div>
+          </article>
+
+          <article class="pet-card">
+            <img
+              src="IMG_4574.jpeg"
+              alt="Kittens in rescue housing"
+              loading="lazy"
+            />
+            <div class="pet-meta">
+              <div>
+                <p class="eyebrow">Kitten</p>
+                <h3>Curious and cuddly</h3>
+              </div>
+              <span class="chip">Sweet</span>
+            </div>
+          </article>
         </section>
 
         <section class="stats-grid" aria-label="stat cards">
@@ -92,35 +227,42 @@
           </article>
         </section>
 
-        <section class="dashboard" id="explore">
-          <div class="panel controls-panel">
-            <h3>Interactive explorer</h3>
-            <label for="speciesSelect">Animal type</label>
-            <select id="speciesSelect">
-              <option value="all">All animals</option>
-              <option value="dogs">Dogs</option>
-              <option value="cats">Cats</option>
-            </select>
-
-            <label for="factorSelect">Factor to compare</label>
-            <select id="factorSelect">
-              <option value="condition">Condition</option>
-              <option value="fertility">Fertility status</option>
-              <option value="sex">Sex</option>
-              <option value="breed">Breed</option>
-            </select>
-
-            <div class="legend-box">
-              <h4>Key takeaway</h4>
-              <p id="factorSummary">
-                Shelters typically see the strongest adoption lift when animals are healthy,
-                already altered, and cleared for placement.
-              </p>
-            </div>
+        <section class="dashboard-shell" id="explore">
+          <div class="section-header">
+            <p class="eyebrow">Interactive explorer</p>
+            <h3>Explore the adoption data</h3>
           </div>
 
-          <div class="panel chart-panel">
-            <div id="primaryChart" aria-label="Primary adoption rate chart"></div>
+          <div class="dashboard">
+            <div class="panel controls-panel">
+              <h3>Interactive explorer</h3>
+              <label for="speciesSelect">Animal type</label>
+              <select id="speciesSelect">
+                <option value="all">All animals</option>
+                <option value="dogs">Dogs</option>
+                <option value="cats">Cats</option>
+              </select>
+
+              <label for="factorSelect">Factor to compare</label>
+              <select id="factorSelect">
+                <option value="condition">Condition</option>
+                <option value="fertility">Fertility status</option>
+                <option value="sex">Sex</option>
+                <option value="breed">Breed</option>
+              </select>
+
+              <div class="legend-box">
+                <h4>Key takeaway</h4>
+                <p id="factorSummary">
+                  Shelters typically see the strongest adoption lift when animals are healthy,
+                  already altered, and cleared for placement.
+                </p>
+              </div>
+            </div>
+
+            <div class="panel chart-panel">
+              <div id="primaryChart" aria-label="Primary adoption rate chart"></div>
+            </div>
           </div>
         </section>
 

@@ -27,9 +27,8 @@ body {
   margin: 0;
   font-family: "Inter", sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(15, 123, 255, 0.12), transparent 28%),
-    radial-gradient(circle at top right, rgba(123, 101, 255, 0.12), transparent 20%),
-    var(--bg);
+    linear-gradient(rgba(244, 248, 251, 0.8), rgba(244, 248, 251, 0.82)),
+    url("https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat fixed;
   color: var(--ink);
 }
 
@@ -50,6 +49,9 @@ select {
 }
 
 .topbar {
+  position: sticky;
+  top: 14px;
+  z-index: 20;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -96,15 +98,27 @@ select {
 
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 12px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .nav-links a {
   color: var(--ink);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   opacity: 0.8;
+  padding: 0.7rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: all 0.18s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  background: rgba(15, 123, 255, 0.08);
+  border-color: rgba(15, 123, 255, 0.12);
+  opacity: 1;
 }
 
 .hero {
@@ -215,6 +229,139 @@ select {
   color: var(--muted);
 }
 
+.why-section {
+  margin-top: 28px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1.3fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.why-photo-panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.why-photo-panel img {
+  width: 100%;
+  height: 100%;
+  min-height: 440px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.why-copy {
+  padding: 28px 26px;
+}
+
+.why-copy p {
+  margin: 0 0 16px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.reason-list,
+.organization-list ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.reason-list {
+  margin: 18px 0;
+}
+
+.organization-list,
+.clinic-list {
+  margin-top: 20px;
+}
+
+.organization-list h4,
+.clinic-list h4 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.organization-list ul {
+  list-style: disc;
+}
+
+.organization-list a,
+.clinic-list p {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.organization-list a:hover,
+.organization-list a:focus-visible {
+  color: var(--primary);
+}
+
+.clinic-list p {
+  margin: 0 0 8px;
+  color: var(--muted);
+}
+
+.cute-dogs-section {
+  margin-top: 28px;
+}
+
+.pet-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 28px;
+}
+
+.pet-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.pet-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.pet-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 18px 20px;
+}
+
+.pet-meta h3 {
+  margin: 6px 0 0;
+  font-size: 1.25rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(15, 123, 255, 0.1);
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -247,11 +394,28 @@ select {
   line-height: 1.55;
 }
 
+section[id] {
+  scroll-margin-top: 110px;
+}
+
+.dashboard-shell {
+  margin-top: 28px;
+}
+
+.section-header {
+  margin-bottom: 18px;
+}
+
+.section-header h3 {
+  margin: 8px 0 0;
+  font-size: 2rem;
+  letter-spacing: -0.04em;
+}
+
 .dashboard {
   display: grid;
   grid-template-columns: 360px minmax(0, 1fr);
   gap: 24px;
-  margin-top: 28px;
 }
 
 .panel {
@@ -358,6 +522,7 @@ select {
   .hero,
   .dashboard,
   .mini-grid,
+  .pet-gallery,
   .stats-grid {
     grid-template-columns: 1fr;
   }
