@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore | Adoption Factors</title>
+    <meta
+      name="description"
+      content="Interactive exploration of shelter outcomes, intake sources, length of stay, and care needs in Florida shelters."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="logo-mark">F</div>
+          <div>
+            <p class="eyebrow">Florida shelter outcomes</p>
+            <h1>Adoption Factors</h1>
+          </div>
+        </div>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="overview.html">Overview</a>
+          <a href="why.html">Why</a>
+          <a href="explore.html" aria-current="page">Explore</a>
+          <a href="alumni.html">Alumni</a>
+          <a href="help.html">How to help</a>
+          <a href="sources.html">Sources</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="dashboard-shell" id="explore">
+          <div class="section-header">
+            <p class="eyebrow">Interactive explorer</p>
+            <h3>Explore the adoption data</h3>
+          </div>
+
+          <div class="dashboard">
+            <div class="panel controls-panel">
+              <h3>Interactive explorer</h3>
+              <label for="speciesSelect">Animal type</label>
+              <select id="speciesSelect">
+                <option value="all">All animals</option>
+                <option value="dogs">Dogs</option>
+                <option value="cats">Cats</option>
+              </select>
+
+              <label for="factorSelect">Factor to compare</label>
+              <select id="factorSelect">
+                <option value="outcomes">Outcome mix</option>
+                <option value="intake">Intake source</option>
+                <option value="stay">Length of stay</option>
+                <option value="care">Care needs</option>
+              </select>
+
+              <div class="metric-card highlight">
+                <span class="label">Biggest lift</span>
+                <strong id="best-factor">Healthy animals</strong>
+              </div>
+              <div class="metric-card">
+                <span class="label">Strongest signal</span>
+                <strong id="strongest-signal">Outcome mix</strong>
+              </div>
+              <div class="metric-card">
+                <span class="label">Watchlist</span>
+                <strong id="watchlist">Transfer</strong>
+                <small id="sample-size">Sample size: 0 animals</small>
+              </div>
+
+              <div class="source-box">
+                <h4>Data sources</h4>
+                <p id="sourceLinksText">
+                  Based on Shelter Animals Count and Hillsborough County animal resource reports.
+                </p>
+              </div>
+
+              <div class="legend-box">
+                <h4>Key takeaway</h4>
+                <p id="factorSummary">
+                  Shelter outcomes are strongest when animals can move quickly through adoption,
+                  with fewer medical and behavioral barriers.
+                </p>
+              </div>
+            </div>
+
+            <div class="panel chart-panel">
+              <div id="primaryChart" aria-label="Primary adoption rate chart"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="stats-grid" aria-label="stat cards">
+          <article class="stat-card">
+            <div class="stat-topline">Adoption share</div>
+            <div class="stat-value" id="stat-health">61%</div>
+            <p>Most animals leaving shelters do so through adoption rather than transfer or other outcomes.</p>
+          </article>
+          <article class="stat-card">
+            <div class="stat-topline">Return-to-owner</div>
+            <div class="stat-value" id="stat-fertility">16%</div>
+            <p>Recovered pets often rejoin their guardians without prolonged shelter stays, reducing system strain.</p>
+          </article>
+          <article class="stat-card">
+            <div class="stat-topline">Average stay</div>
+            <div class="stat-value" id="stat-sex">21 days</div>
+            <p>Animals that move quickly through the system are more likely to reach adoption-ready status sooner.</p>
+          </article>
+          <article class="stat-card">
+            <div class="stat-topline">Intake source</div>
+            <div class="stat-value" id="stat-breed">46%</div>
+            <p>Stray intake remains one of the largest drivers of shelter demand and resource planning.</p>
+          </article>
+        </section>
+
+        <section class="social-grid" aria-label="Additional visual data cards">
+          <div class="panel mini-panel scatter-panel">
+            <h3>Outcome distribution</h3>
+            <div id="scatterChart"></div>
+          </div>
+          <div class="panel mini-panel">
+            <h3>Intake source</h3>
+            <div id="intakeChart"></div>
+          </div>
+          <div class="panel mini-panel">
+            <h3>Length of stay</h3>
+            <div id="stayChart"></div>
+          </div>
+          <div class="panel mini-panel">
+            <h3>Care needs</h3>
+            <div id="careChart"></div>
+          </div>
+          <div class="panel mini-panel">
+            <h3>Adoption pathway</h3>
+            <div id="outcomeChart"></div>
+          </div>
+        </section>
+
+        <section class="panel seasonal-panel" aria-label="Monthly seasonal shelter intake and climate overlay">
+          <h3>Seasonal shelter intake and climate patterns</h3>
+          <div id="seasonalChart"></div>
+        </section>
+      </main>
+
+      <footer class="footer" id="sources">
+        <p>
+          <a href="sources.html">View sources</a>
+        </p>
+      </footer>
+    </div>
+
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

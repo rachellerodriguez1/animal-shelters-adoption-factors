@@ -1,18 +1,18 @@
 :root {
-  --bg: #f4f8fb;
-  --bg-strong: #edf6ff;
-  --panel: rgba(255, 255, 255, 0.88);
+  --bg: #fff7fb;
+  --bg-strong: #ffeaf4;
+  --panel: rgba(255, 255, 255, 0.9);
   --panel-strong: #ffffff;
-  --ink: #10243d;
-  --muted: #5f7187;
-  --line: rgba(16, 36, 61, 0.09);
-  --primary: #0f7bff;
-  --primary-soft: #cfe5ff;
-  --coral: #ff7a59;
-  --mint: #28b5a3;
-  --purple: #7b65ff;
-  --amber: #f3b94d;
-  --shadow: 0 18px 45px rgba(15, 36, 61, 0.11);
+  --ink: #4d2d39;
+  --muted: #775b66;
+  --line: rgba(120, 72, 92, 0.12);
+  --primary: #e87ca9;
+  --primary-soft: #ffd9ea;
+  --coral: #f7a7a8;
+  --mint: #bfe7d6;
+  --purple: #d7c5ff;
+  --amber: #f8dd9d;
+  --shadow: 0 18px 45px rgba(181, 116, 146, 0.14);
 }
 
 * {
@@ -74,12 +74,18 @@ select {
   width: 42px;
   height: 42px;
   border-radius: 12px;
-  background: linear-gradient(135deg, var(--primary), var(--purple));
-  color: white;
+  background-image: url("paw%20print%20.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: transparent;
   display: grid;
   place-items: center;
   font-weight: 800;
-  box-shadow: 0 10px 25px rgba(15, 123, 255, 0.22);
+  box-shadow: 0 10px 25px rgba(232, 124, 169, 0.22);
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
 }
 
 .eyebrow {
@@ -94,6 +100,14 @@ select {
 .brand-wrap h1 {
   margin: 4px 0 0;
   font-size: 1.25rem;
+}
+
+.author-credit {
+  margin: 4px 0 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--muted);
 }
 
 .nav-links {
@@ -116,8 +130,8 @@ select {
 
 .nav-links a:hover,
 .nav-links a:focus-visible {
-  background: rgba(15, 123, 255, 0.08);
-  border-color: rgba(15, 123, 255, 0.12);
+  background: rgba(232, 124, 169, 0.1);
+  border-color: rgba(232, 124, 169, 0.18);
   opacity: 1;
 }
 
@@ -177,14 +191,15 @@ select {
 }
 
 .primary-btn {
-  background: linear-gradient(135deg, var(--primary), var(--purple));
-  color: white;
-  box-shadow: 0 16px 25px rgba(79, 107, 255, 0.22);
+  background: linear-gradient(135deg, #ffd7e8, #f8cfe2);
+  color: #4d2d39;
+  box-shadow: 0 14px 24px rgba(232, 124, 169, 0.18);
 }
 
 .secondary-btn {
-  background: rgba(15, 123, 255, 0.08);
-  color: var(--ink);
+  background: linear-gradient(135deg, #fff0f5, #fdf1dc);
+  color: #4d2d39;
+  border: 1px solid rgba(77, 45, 57, 0.08);
 }
 
 .primary-btn:hover,
@@ -209,7 +224,7 @@ select {
 }
 
 .metric-card.highlight {
-  background: linear-gradient(135deg, rgba(15, 123, 255, 0.08), rgba(123, 101, 255, 0.08));
+  background: linear-gradient(135deg, rgba(232, 124, 169, 0.12), rgba(215, 197, 255, 0.14));
 }
 
 .metric-card .label {
@@ -354,7 +369,7 @@ select {
   align-items: center;
   padding: 0.45rem 0.7rem;
   border-radius: 999px;
-  background: rgba(15, 123, 255, 0.1);
+  background: rgba(232, 124, 169, 0.12);
   color: var(--primary);
   font-weight: 700;
   font-size: 0.72rem;
@@ -477,9 +492,31 @@ select {
 #breedChart,
 #fertilityChart,
 #sexChart,
-#conditionChart {
+#conditionChart,
+#scatterChart,
+#seasonalChart {
   width: 100%;
   min-height: 260px;
+}
+
+#scatterChart {
+  min-height: 320px;
+}
+
+#seasonalChart {
+  min-height: 420px;
+}
+
+.seasonal-panel {
+  margin-top: 24px;
+  min-height: 480px;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 24px;
 }
 
 .mini-grid {
@@ -491,6 +528,11 @@ select {
 
 .mini-panel {
   min-height: 300px;
+}
+
+.scatter-panel {
+  grid-column: 1 / -1;
+  min-height: 400px;
 }
 
 .insight-section {
@@ -508,6 +550,65 @@ select {
   margin-top: 8px;
 }
 
+.help-page-shell {
+  max-width: 1100px;
+}
+
+.help-page-main {
+  margin-top: 28px;
+}
+
+.help-hero {
+  padding: 32px 28px;
+}
+
+.help-hero h2 {
+  margin: 10px 0 16px;
+  font-size: clamp(2rem, 3vw, 3rem);
+  letter-spacing: -0.05em;
+}
+
+.help-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 28px;
+}
+
+.help-section {
+  padding: 24px;
+}
+
+.help-section h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+
+.paw-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.paw-heading::before {
+  content: "🐾";
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.help-section ul {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.help-section li + li {
+  margin-top: 12px;
+}
+
 .footer {
   margin-top: 28px;
   background: rgba(16, 36, 61, 0.96);
@@ -523,7 +624,8 @@ select {
   .dashboard,
   .mini-grid,
   .pet-gallery,
-  .stats-grid {
+  .stats-grid,
+  .help-grid {
     grid-template-columns: 1fr;
   }
 
